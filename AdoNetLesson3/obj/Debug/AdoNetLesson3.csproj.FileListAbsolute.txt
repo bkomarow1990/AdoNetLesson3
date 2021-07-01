@@ -1,0 +1,15 @@
+C:\Users\Gnidez.itstep.000.001\source\repos\AdoNetLesson3\AdoNetLesson3\bin\Debug\AdoNetLesson3.exe.config
+C:\Users\Gnidez.itstep.000.001\source\repos\AdoNetLesson3\AdoNetLesson3\bin\Debug\AdoNetLesson3.exe
+C:\Users\Gnidez.itstep.000.001\source\repos\AdoNetLesson3\AdoNetLesson3\bin\Debug\AdoNetLesson3.pdb
+C:\Users\Gnidez.itstep.000.001\source\repos\AdoNetLesson3\AdoNetLesson3\obj\Debug\AdoNetLesson3.csprojAssemblyReference.cache
+C:\Users\Gnidez.itstep.000.001\source\repos\AdoNetLesson3\AdoNetLesson3\obj\Debug\MainWindow.g.cs
+C:\Users\Gnidez.itstep.000.001\source\repos\AdoNetLesson3\AdoNetLesson3\obj\Debug\App.g.cs
+C:\Users\Gnidez.itstep.000.001\source\repos\AdoNetLesson3\AdoNetLesson3\obj\Debug\AdoNetLesson3_MarkupCompile.cache
+C:\Users\Gnidez.itstep.000.001\source\repos\AdoNetLesson3\AdoNetLesson3\obj\Debug\AdoNetLesson3_MarkupCompile.lref
+C:\Users\Gnidez.itstep.000.001\source\repos\AdoNetLesson3\AdoNetLesson3\obj\Debug\MainWindow.baml
+C:\Users\Gnidez.itstep.000.001\source\repos\AdoNetLesson3\AdoNetLesson3\obj\Debug\AdoNetLesson3.g.resources
+C:\Users\Gnidez.itstep.000.001\source\repos\AdoNetLesson3\AdoNetLesson3\obj\Debug\AdoNetLesson3.Properties.Resources.resources
+C:\Users\Gnidez.itstep.000.001\source\repos\AdoNetLesson3\AdoNetLesson3\obj\Debug\AdoNetLesson3.csproj.GenerateResource.cache
+C:\Users\Gnidez.itstep.000.001\source\repos\AdoNetLesson3\AdoNetLesson3\obj\Debug\AdoNetLesson3.csproj.CoreCompileInputs.cache
+C:\Users\Gnidez.itstep.000.001\source\repos\AdoNetLesson3\AdoNetLesson3\obj\Debug\AdoNetLesson3.exe
+C:\Users\Gnidez.itstep.000.001\source\repos\AdoNetLesson3\AdoNetLesson3\obj\Debug\AdoNetLesson3.pdb

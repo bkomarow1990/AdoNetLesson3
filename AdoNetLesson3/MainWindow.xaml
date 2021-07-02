@@ -22,21 +22,8 @@
         <Button x:Name="FillBtn" Grid.Column="1" Click="FillBtn_Click">
             Fill
         </Button>
-        <Button x:Name="FillButton" Grid.Row="0" Grid.ColumnSpan="1">
-            Update
-        </Button>
         <DataGrid x:Name="itemsDataGrid" Grid.Row="1" Grid.ColumnSpan="2">
 
         </DataGrid>
-        <ComboBox Grid.Row="2" Grid.ColumnSpan="2" Name="cb">
-            <ComboBoxItem Selected="ComboBoxItem_Selected">
-                <TextBlock> Shop</TextBlock>
-                
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <TextBlock> Users</TextBlock>
-
-            </ComboBoxItem>
-        </ComboBox>
     </Grid>
 </Window>

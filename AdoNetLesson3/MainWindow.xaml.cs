@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,10 +27,6 @@ namespace AdoNetLesson3
     ///
     public partial class MainWindow : Window
     {
-        string connStringNotEncrypted = "";
-        //шифрованная строка подключения
-        string connStringWithEncryption = "";
-        ShopDb shopDb = new ShopDb();
         private DbProviderFactory fact = null;
         // connection class to database
         private DbConnection conn = null;
@@ -44,7 +41,6 @@ namespace AdoNetLesson3
         }
         private void LoadDataGrid()
         {
-            // query for select data
             string sql = "SELECT * FROM Users;";
             // create data adapter
             da = fact.CreateDataAdapter();
@@ -66,19 +62,12 @@ namespace AdoNetLesson3
         public MainWindow()
         {
             InitializeComponent();
-            connStringNotEncrypted = ConfigurationManager.ConnectionStrings["AccountsDB"].ConnectionString;
-            //отображаем строку подключения до шифрования
-            //выполняем шифрование
+            //CryptoKeyAccessRule rule = new CryptoKeyAccessRule("everyone", CryptoKeyRights.FullControl, AccessControlType.Allow);
             EncryptConnSettings("connectionStrings");
-            //читаем строку подключения после шифрования
-            //connStringWithEncryption = ConfigurationManager.ConnectionStrings["AccountsDB"].ConnectionString;
-            ////отображаем строку подключения после шифрования
-            string cs = ConfigurationManager.ConnectionStrings["AccountsDB"].ConnectionString;
-            //// create factory from provider name
             fact = DbProviderFactories.GetFactory(ConfigurationManager.ConnectionStrings["AccountsDB"].ProviderName);
-
-            //// create sql connection class
+            string cs = ConfigurationManager.ConnectionStrings["AccountsDB"].ConnectionString;
             conn = fact.CreateConnection();
+            //conn.ConnectionString = cs;
             conn.ConnectionString = cs;
             LoadDataGrid();
         }
@@ -102,19 +91,24 @@ namespace AdoNetLesson3
 
         private void EncryptConnSettings(string section)
         {
+            //создаем объект нашего конфигурационного файла
+            //AppConfigDecrypt.exe — это имя выполняемого
+            //файла вашего приложения если у вас оно
+            //другое, то учтите этот момент
+
             Configuration objConfig = ConfigurationManager.OpenExeConfiguration(System.Reflection.Assembly.GetEntryAssembly().Location); //GetAppPath() + "config_encryptions.exe");
+            MessageBox.Show($"{System.Reflection.Assembly.GetEntryAssembly().Location}, {System.Reflection.Assembly.GetEntryAssembly()}");
             //получаем доступ к разделу ConnectionStrings
             //нашего конфигурационного файла
             ConnectionStringsSection conSringSection = (ConnectionStringsSection)objConfig.GetSection(section);
             //если раздел не зашифрован — шифруем его
             if (!conSringSection.SectionInformation.IsProtected)
             {
-                conSringSection.SectionInformation.ProtectSection("RsaProtectedConfigurationProvider");
+                conSringSection.SectionInformation.ProtectSection("MyProtectionProvider");
                 conSringSection.SectionInformation.ForceSave = true;
                 objConfig.Save(ConfigurationSaveMode.Modified);
             }
         }
-
         private void UpdateBtn_Click(object sender, RoutedEventArgs e)
         {
             try
